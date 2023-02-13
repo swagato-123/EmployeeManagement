@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 50%;
+  height: 50%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 15px;
+  background-color: #f44336;
+  float:left;
+}
+.signupbutton{
+  width: auto;
+  padding: 10px 15px;
+  background-color: #f44336;
+  float:right;
+}
+
+
+
+.container {
+  padding: 16px;
+}
+
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */ 
+  left: 25%;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 5%; /* Full height */
+  /* overflow: auto; /* Enable scroll if needed */
+  
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 10px solid #888;
+  width: 70%; /* Could be more or less, depending on screen size */
+  height:400px;
+}
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+     
+  }
+  
+  .signupbutton{
+  width: 100%;
+  
+  }
+}
+
+
+.main{
+	
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("./images/darkblue.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    
+}
+
+/*.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+*/
+
+.logo{
+    color: #ff7200;
+    font-size: 40px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+
+.menu {
+ float:right;
+}
+
+.menu li {
+	display: inline-block;
+	List-style: none;
+}
+
+.menu li a {
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 0px 40px;
+	color: white;
+	text-decoration: none;
+}
+
+
+
+.navbar{
+
+width: 100%;
+height:120px;
+line-height:75px;
+padding: 0px 0px;
+position:sticky;
+cursor: pointer;
+background-image: linear-gradient(#033747,#012733)
+background-blend-mode: darken;
+
+
+}
+
+
+</style>
+</head>
+<body>
+ 
+ <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Employee Management</h2>
+            </div>
+            
+               <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><button><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">AdminLogin</a></button></li>
+                    <li><button><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">UserLogin</a></button></li>
+                </ul>
+                </div>
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="home" >
+   
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+		<br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      
+      <label float:left>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      
+      <label float:right>
+      	  <span class="psw">Forgot <a href="#">password?</a></span> 
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onClick="location.href='/'" class="cancelbtn">Cancel</button>
+      
+      
+    <button type="button" onClick="location.href='signup'" class="signupbutton">Signup</button>
+      <!--  <span class="psw">You haven't account?</span>  -->
+      </div>
+      
+      
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="home2" >
+   
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+		<br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      
+      <label float:left>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      
+      <label float:right>
+      	  <span class="psw">Forgot <a href="#">password?</a></span> 
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onClick="location.href='/'" class="cancelbtn">Cancel</button>
+      
+      
+    <button type="button" onClick="location.href='signup'" class="signupbutton">Signup</button>
+      <!--  <span class="psw">You haven't account?</span>  -->
+      </div>
+      
+      
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+<!-- size sliding image  -->
+<style>
+
+	#mainsl{
+		position: center;
+			
+		}
+	
+	img{
+		
+		width: 100%;
+		height: 670px;		
+	}
+</style>
+
+
+<!-- image sliding  -->
+<div id="mainsl"> 
+	<img src="./images/backg.jpg" id="slideimage">
+
+</div>
+
+<script>
+	function  First()
+	{
+		document.getElementById("slideimage").src="./images/one.jpg";
+	}
+	setInterval(First,2000);
+
+	function  Second()
+	{
+		document.getElementById("slideimage").src="./images/two.jpg";
+	}
+	setInterval(Second,4000);
+
+	function  Third()
+	{
+		document.getElementById("slideimage").src="./images/backg.jpg";
+	}
+	setInterval(Third,6000);
+</script>
+
+<!-- ************************************************************************************************************* -->
+<section id="contact">
+<div class="contact container">
+      <div>
+        <center><h1 class="section-title">Contact <span>info</span></h1></center>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+         <!-- <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div> -->
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>+1 234 123 1234</h2>
+            <h2>+1 234 123 1234</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <!-- <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div> -->
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>info@gmail.com</h2>
+            <h2>abcd@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+         <!--  <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div> -->
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Howrah, West Bengal</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<style>
+
+.contact
+{
+background: url("./images/contact.jpg");
+background-size: cover;
+margin-top:0px;
+margin-bottom:20px;
+
+
+}
+
+
+#contact .contact container {
+	
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	
+	
+	
+}
+#contact .contact-items {
+	/* max-width: 400px; */
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+#contact .contact-item {
+	width: 90%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	padding: 30px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+	transition: 0.5s ease box-shadow;
+	
+}
+#contact .contact-item:hover {
+	box-shadow: 0px 0px 5px 0 #0000002c;
+}
+#contact .icon {
+	width: 20px;
+	height: 10px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#contact .contact-info h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 5px;
+	
+	
+}
+#contact .contact-info h2 {
+	font-size: 1.3rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+</style>
+
+
+<!-- ************************************************************************************************************* -->
+
+<section id="about">
+    <div class="about container">
+      <div class="col-left">
+       
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About <span>me</span></h1>
+        <h2>Employee Management System(Web Version v0.1) </h2>
+        <p>Here You Can Add & Delete Employee Details.</p>
+        
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  .about {
+  	background: url(./images/about.jpg);
+  	background-size: cover;
+  	
+  	block-size:350px;
+  	
+	flex-direction: column-reverse;
+	text-align: center;
+	max-width: 2000px;
+	margin: 0 auto;
+	padding: 0px 0px;
+	
+	
+}
+
+about container{
+	display: inline-block;
+}
+
+#about .col-left {
+	width: 250px;
+	height: 50px;
+}
+#about .col-right {
+	width: 100%;
+}
+#about .col-right h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	margin-bottom: 5px;
+}
+#about .col-right p {
+	margin-bottom: 0px;
+}
+#about .col-right .cta {
+	color: black;
+	margin-bottom: 50px;
+	padding: 10px 20px;
+	font-size: 2rem;
+}
+
+
+  </style>
+
+<!-- ************************************************************************************************************* -->
+
+  <section id="footer">
+  <center>
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>S</span>WAGA<span>T</span>O</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      
+   <!--    
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img th:src="@{/images/Facebook_Logo.png}" width="50" /></a> 
+        </div>
+        <div class="social-item">
+          <a href="#"><img th:src="@{/images/instagram.png}" width="50" /></a> 
+        </div>
+        <div class="social-item">
+           <a href="#"><img th:src="@{/images/WhatsApp.png}" width="50" /></a> 
+        </div>
+        <div class="social-item">
+           <a href="#"><img th:src="@{/images/twitter.png}" width="50" /></a> 
+        </div>
+      </div>
+      -->
+      
+      <p>Copyright © 2022 Swagato. All rights reserved</p>
+    </div>
+    </center>
+  </section>
+  
+  
+  <style>
+  
+ 
+
+.footer container
+{
+	
+	display: inline-block;
+}
+
+
+.footer {
+	background: black;
+	
+	min-height: 100%;
+	block-size:350px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#footer h1{
+	color: white;
+}
+
+#footer h2 {
+	color: white;
+	font-weight: 300%;
+	font-size: 1.1rem;
+	letter-spacing: 0.5rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+	
+}
+#footer .social-item {
+	height: 30px;
+	
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+#footer .social-item img {
+	filter: grayscale(1);
+	transition: 0.8s ease filter;
+}
+#footer .social-item:hover img {
+	filter: grayscale(0);
+}
+#footer p {
+	color: white;
+	font-size: 1.5rem;
+	
+}
+  </style>
+  
+
+<!-- ************************************************************************************************************* -->
+
+</body>
+</html>
